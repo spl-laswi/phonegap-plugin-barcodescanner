@@ -1,8 +1,5 @@
 repositories{
     jcenter()
-    flatDir{
-        dirs 'libs'
-    }
 }
 
 dependencies {
@@ -13,5 +10,10 @@ android {
     packagingOptions {
         exclude 'META-INF/NOTICE'
         exclude 'META-INF/LICENSE'
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
     }
 }
